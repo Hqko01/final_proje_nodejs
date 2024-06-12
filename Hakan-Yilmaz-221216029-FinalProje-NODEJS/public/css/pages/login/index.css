@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f2f6;
+    opacity: 0.8;
+    background-image: radial-gradient(circle at center center, #d9dbfd, #e5e5f7), repeating-radial-gradient(circle at center center, #f1f2f6, #f1f2f6, 10px, transparent 20px, transparent 10px);
+    background-blend-mode: multiply;
+}
+
+.formContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vh;
+    background-color: var(--white);
+    border-radius: .5pc;
+}
+
+.formContent form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 1pc;
+    width: 100%;
+    height: 100%;
+    padding: 1pc;
+}
+
+.formContent form input {
+    border: none;
+    outline: none;
+    background-color: white;
+    box-shadow: 1px 1px 5px var(--shadow-color);
+    border-radius: .2pc;
+    width: 70%;
+    padding: .5pc 1.2pc;
+    text-align: center;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.formContent form input:hover {
+    transform: translateY(-5%);
+}
+
+.formContent form select {
+    border: none;
+    outline: none;
+    background-color: white;
+    box-shadow: 1px 1px 5px var(--shadow-color);
+    border-radius: .2pc;
+    width: 70%;
+    padding: .5pc 1.2pc;
+    text-align: center;
+}
+
+.formContent a {
+    width: 50%;
+}
+
+.formContent button {
+    border: none;
+    outline: none;
+    background-color: rgb(96, 125, 255);
+    color: white;
+    box-shadow: 1px 1px 5px var(--shadow-color);
+    border-radius: .2pc;
+    width: 100%;
+    padding: .5pc 1.2pc;
+    text-align: center;
+    transition: .2s ease;
+    cursor: pointer;
+    margin-bottom: 1pc;
+}

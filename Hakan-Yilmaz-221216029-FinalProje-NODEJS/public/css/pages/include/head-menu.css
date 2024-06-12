@@ -1,0 +1,60 @@
+.head-menu {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--head-menu-background);
+    box-shadow: 0 0 5px var(--shadow-color);
+    padding: 0 2pc;
+}
+
+.head-menu .left .company h2 {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 1.8vw;
+}
+
+.head-menu .right .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+.head-menu .right .options .option {
+    padding: .5pc;
+    border-radius: .1pc;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.head-menu .right .options .option:hover {
+    transform: translateY(-5%);
+}
+
+.head-menu .right .options .option:active {
+    transition: .1s;
+    transform: translateY(0%);
+}
+
+.head-menu .right .options .option[type="login"] {
+    border: 1px solid var(--onMain-color);
+    color: var(--black);
+    font-weight: 500;
+}
+
+.head-menu .right .options .option[type="signup"] {
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: 500;
+}
+
+.head-menu .right .options .option p {
+    text-transform: capitalize;
+    font-size: 1.1vw;
+    letter-spacing: 1px;
+}

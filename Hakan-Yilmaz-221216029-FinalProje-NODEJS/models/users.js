@@ -18,9 +18,12 @@ const usersSchema = new Schema({
         type: String,
         require: true
     },
-    userType: {
+    educationType: {
         type: String,
         require: true
+    },
+    avatar: {
+        typr: String,
     }
 
 }, { Timestamp: true })

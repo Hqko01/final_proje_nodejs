@@ -1,0 +1,142 @@
+.middle {
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.middle .stage-1 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 3pc 2pc;
+}
+
+.middle .stage-1 h1 {
+    font-size: 4vw;
+    padding: 2pc;
+    color: var(--black);
+}
+
+.middle .stage-1 .instructors {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 2pc;
+    gap: 5pc;
+}
+
+.middle .stage-1 .instructors .instructor {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 40vh;
+    min-height: 50vh;
+    background-color: var(--white);
+    box-shadow: 3px 3px 8px rgb(219, 219, 219);
+    border-radius: .5pc;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.middle .stage-1 .instructors .instructor:hover {
+    transform: translateY(-3%);
+}
+
+.middle .stage-1 .instructors .instructor span {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    transform: translate(5%, -5%);
+}
+
+.middle .stage-1 .instructors .instructor span svg {
+    width: 2vw;
+    height: 2vw;
+}
+
+.middle .stage-1 .instructors .instructor span svg path {
+    fill: var(--onMain-color);
+    opacity: .3;
+}
+
+.middle .stage-1 .instructors .instructor .photo {
+    position: relative;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgb(212, 212, 212);
+}
+
+.middle .stage-1 .instructors .instructor .photo img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.middle .stage-1 .instructors .instructor .name p {
+    font-size: 2vw;
+}
+
+.middle .stage-1 .instructors .instructor .category {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+}
+
+.middle .stage-1 .instructors .instructor .category p {
+    font-size: 1vw;
+    color: var(--onMain-color);
+}
+
+.middle .stage-2 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 3pc 2pc;
+}
+
+.middle .stage-2 h1 {
+    font-size: 4vw;
+    padding: 2pc;
+    color: var(--black);
+}
+
+.middle .stage-2 .categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5pc;
+    justify-items: center;
+    padding: 2pc;
+    width: 100%;
+    height: auto;
+}
+
+.middle .stage-2 .categories .category {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40vh;
+    min-height: 40vh;
+    background-color: var(--white);
+    box-shadow: 3px 3px 8px rgb(219, 219, 219);
+    border-radius: .5pc;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.middle .stage-2 .categories .category:hover {
+    transform: translateY(-3%);
+}
+
+.middle .stage-2 .categories .category p {
+    font-weight: 300;
+    font-size: 2vw;
+    color: var(--black);
+}
