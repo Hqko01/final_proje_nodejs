@@ -23,9 +23,11 @@ const usersSchema = new Schema({
         require: true
     },
     avatar: {
-        typr: String,
+        type: String,
+    },
+    job: {
+        type: String,
     }
-
 }, { Timestamp: true })
 
 const users = mongoose.model('users', usersSchema)

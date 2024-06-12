@@ -1,0 +1,301 @@
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.main #accountAdministration {
+    width: 70%;
+    height: 100%;
+    padding: .5pc 1pc;
+    transition: .7s ease;
+}
+
+.main #accountAdministration .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.8pc;
+    overflow: hidden;
+}
+
+.main #accountAdministration .content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    font-weight: 600;
+    color: #efefef;
+    background-color: #05224e70;
+    backdrop-filter: blur(.4pc);
+    transition: .4s ease;
+    opacity: 0;
+    z-index: -1;
+}
+
+.main #accountAdministration .content.loaded::after {
+    content: '';
+    opacity: 1;
+    z-index: 10;
+    animation: administrationContentAfter 2s ease infinite;
+}
+
+@keyframes administrationContentAfter {
+
+    0%,
+    100% {
+        content: 'İşleniyor.';
+    }
+
+    50% {
+        content: 'İşleniyor..';
+    }
+
+    75% {
+        content: 'İşleniyor...';
+    }
+}
+
+.main #accountAdministration .content .header {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 3pc;
+    gap: 1.4vw;
+    max-height: 4pc;
+    min-height: 4pc;
+}
+
+.main #accountAdministration .content .header::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 85%;
+    height: 2px;
+    background-color: #05224e;
+    border-radius: 1pc;
+    opacity: .4;
+}
+
+.main #accountAdministration .content .header svg {
+    width: 1.9vw;
+}
+
+.main #accountAdministration .content .header svg path {
+    fill: #05224e;
+}
+
+.main #accountAdministration .content .header h2 {
+    font-size: 2vw;
+    text-align: center;
+    color: #05224e;
+    font-weight: 400;
+}
+
+.main #accountAdministration .content .form {
+    flex: 9;
+}
+
+.main #accountAdministration .content .form .value {
+    width: 100%;
+    height: 100%;
+}
+
+.main #accountAdministration .content .value .settings {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    height: 100%;
+}
+
+.main #accountAdministration .content .value .settings .pp {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.main #accountAdministration .content .value .settings .pp .content {
+    position: relative;
+    max-width: 75%;
+    max-height: 80%;
+    background-color: white;
+    box-shadow: 0 0 20px #dbd9d1;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 1.8pc;
+}
+
+.main #accountAdministration .content .value .settings .pp .content::after {
+    content: 'Avatarını Düzenlemek için tıkla';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7vw;
+    font-weight: 600;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    backdrop-filter: blur(0pc);
+    height: 100%;
+    background-color: #05224e43;
+    transition: .2s ease;
+    opacity: 1;
+    z-index: 1;
+}
+
+.main #accountAdministration .content .value .settings .name {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main #accountAdministration .content .value .settings div .content {
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 1pc;
+    background-color: white;
+    box-shadow: 0 0 2px #05224e43;
+    padding: 0 2pc;
+}
+
+.main #accountAdministration .content .value .settings div .content label {
+    color: #05224e;
+    font-weight: 500;
+    font-size: 1.5vw;
+    margin-bottom: .5pc;
+}
+
+.main #accountAdministration .content .value .settings div .content input {
+    border: none;
+    outline: none;
+    padding: 1pc 1pc;
+    box-shadow: 0 0 3px #05224e43;
+    border-radius: .5pc;
+    font-size: 1.1vw;
+    color: #05224e;
+    font-weight: 500;
+}
+
+.main #accountAdministration .content .value .settings .password {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main #accountAdministration .content .value .settings .gender {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.main #accountAdministration .content .value .settings .job {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main #accountAdministration .content .value .settings .mail {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.main #accountAdministration .content .value .settings .update {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main #accountAdministration .content .value .settings .update .button {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: .5vw;
+    padding: 1pc 1.5pc;
+    border-radius: 2pc;
+    font-size: 1.5vw;
+    background-color: white;
+    cursor: pointer;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1), padding .1s ease;
+}
+
+.main #accountAdministration .content .value .settings .update .button:hover {
+    background-color: #05224e1a;
+}
+
+.main #accountAdministration .content .value .settings .update .button:active {
+    background-color: #05224e45;
+    transition: .1s;
+}
+
+.main #accountAdministration .content .value .settings .delete {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main #accountAdministration .content .value .settings .delete .button {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: .5vw;
+    padding: 1pc 1.5pc;
+    border-radius: 2pc;
+    font-size: 1.5vw;
+    background-color: white;
+    cursor: pointer;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1), padding .1s ease;
+    border: 2px solid red;
+}
+
+.main #accountAdministration .content .value .settings .delete .button:hover {
+    background-color: #05224e1a;
+}
+
+.main #accountAdministration .content .value .settings .delete .button:active {
+    background-color: #05224e45;
+    transition: .1s;
+}

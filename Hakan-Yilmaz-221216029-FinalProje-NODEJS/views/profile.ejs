@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/pages/profile/index.css">
+    <title>Eğitim Ağacı | Profil</title>
+</head>
+
+<body>
+    <div class="main">
+        <div id="accountAdministration">
+            <div class="content">
+                <div class="header">
+                    <h2>
+                        Hesap Yönetimi
+                    </h2>
+                </div>
+                <div class="form">
+                    <div class="value">
+                        <div class="settings">
+                            <label for="pp" class="pp">
+                                <div class="content">
+                                    <img src="<%- profile.avatar %>" alt="" id="pp"
+                                        style="position:absolute; width: 100%; height:100%; object-fit: cover; object-position: center;">
+                                </div>
+                                <input type="file" name="pp" id="newPP" accept="image/*"
+                                    style="position: absolute; top: 0%; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 10;">
+                            </label>
+                            <div class="name">
+                                <div class="content">
+                                    <label for="name">
+                                        Adın
+                                    </label>
+                                    <input type="text" name="name" id="name" placeholder="Adın"
+                                        value="<%- profile.name %>">
+                                </div>
+                            </div>
+                            <div class="password">
+                                <div class="content">
+                                    <label for="name">
+                                        Şifren
+                                    </label>
+                                    <input type="password" name="password" id="password" placeholder="Şifren"
+                                        value="<%- profile.password %>">
+                                </div>
+                            </div>
+                            <div class="gender">
+                                <div class="content">
+                                    <label for="name">
+                                        Cinsiyetin
+                                    </label>
+                                    <% if(profile.gender=="male" ) { %>
+                                        <input type="text" name="gender" id="gender" placeholder="Cinsiyet"
+                                            value="Erkek">
+                                        <% } else {%>
+                                            <input type="text" name="gender" id="gender" placeholder="Cinsiyet"
+                                                value="Kadın">
+                                            <% } %>
+                                </div>
+                            </div>
+                            <div class="job">
+                                <div class="content">
+                                    <label for="name">
+                                        Mesleğin
+                                    </label>
+                                    <input type="text" name="job" id="job" placeholder="Mesleğin"
+                                        value="<%- profile.job %>">
+                                </div>
+                            </div>
+                            <div class="mail">
+                                <div class="content">
+                                    <label for="name">
+                                        Mail Adresin
+                                    </label>
+                                    <input type="email" name="mail" id="mail" placeholder="Mail Adresin"
+                                        value="<%- profile.mail %>">
+                                </div>
+                            </div>
+
+                            <div class="update">
+                                <input type="submit" value="Güncelle" class="button" id="accountAdministrationUpdate"
+                                    onclick="administrationUpdate()">
+                            </div>
+                            <div class="delete">
+                                <input type="submit" value="Hesabı Sil" class="button" id="deleteAccount"
+                                    onclick="deleteAccount()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const accountAdministrationUpdate = document.getElementById('accountAdministrationUpdate')
+    const newPP = document.getElementById('newPP')
+    const pp = document.getElementById('pp')
+    accountAdministration.classList.add('active')
+
+    newPP.addEventListener('change', () => {
+        if (newPP.files.length > 0) {
+            var fileToLoad = newPP.files[0]
+            var fileReader = new FileReader()
+            fileReader.onload = function (fileLoadedEvent) {
+                var srcData = fileLoadedEvent.target.result
+                pp.setAttribute('src', srcData)
+            }
+
+            fileReader.readAsDataURL(fileToLoad);
+        }
+    })
+
+    function administrationUpdate() {
+        const name = document.getElementById('name').value
+        const password = document.getElementById('password').value
+        const mail = document.getElementById('mail').value
+        const job = document.getElementById('job').value
+        const gender = document.getElementById('gender').value
+        const avatar = pp.getAttribute('src')
+
+        fetch('/profile/user/update', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                password: password,
+                mail: mail,
+                job: job,
+                gender: gender,
+                avatar: avatar,
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success == true) {
+                    alert('Güncellendi')
+                }
+            })
+    }
+
+    function deleteAccount() {
+        fetch('/profile/user/delete', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success == true) {
+                    window.location = '/'
+                }
+            })
+    }
+</script>
+
+</html>
