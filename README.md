@@ -8,7 +8,3 @@ Mongodb bağlantısı ve gerekli kütüphaneler ve ortamın hazır edilmesi.
 **Profil**i görüntülemek için /profile - profileRoutes (Giriş yapılmadan profili görüntüleyemezsiniz)
 
 Daha fazlası kod satırlarında..
-
-<hr>
-Hocam öncelikle daha iyisini yapamadığım için üzgünüm fakat kötü bir zamana denk geldi bu proje işi ailevi sıkıntılar olsun benim diğer projemle vs. ilgilenmemin gerekmesi ile ayırabildiğim ufacık vakitte aklıma pek bir fikir gelmesede elimden geldiğince bir şeyler yapmaya çalıştım. <br> <br> Sevgilerle..
-
